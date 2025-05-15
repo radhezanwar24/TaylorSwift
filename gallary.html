@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift Albums</title>
+
+    <!-- Linking Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+
+    <style type="text/css">
+        /* styles.css */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f6f6f6, #ffffff);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        header {
+            background-image: url('https://example.com/taylor-swift-image.jpg');
+            background-size: cover;
+            background-position: center;
+
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+            z-index: 0; /* Set z-index lower than the content */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 10;
+            background-color: rgba(51, 51, 51, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px;
+            transition: all 0.3s ease;
+            margin-right: -10px; /* Added negative margin */
+        }
+
+        nav a:hover {
+            color: #FF69B4;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Ensure positioning context for z-index */
+            z-index: 1; /* Set z-index higher than the gradient */
+        }
+
+        h2 {
+            color: black;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            color: black;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            color: #333; /* Changed text color */
+            font-size: 16px; /* Decreased font size for better readability */
+            line-height: 1.8; /* Increased line height for better readability */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+        }
+
+        .social .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap */
+        }
+
+        .social h2 {
+            flex-basis: 100%; /* Force to take full width */
+            margin-bottom: 20px; /* Added margin */
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 20px; /* Increased margin */
+            transition: all 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #FF69B4;
+        }
+
+        .abc {
+            color: white;
+        }
+
+        .container-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 120px 5% 50px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .image {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .image:hover img {
+            transform: scale(1.1);
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif; /* Using Google Font */
+        }
+        .cont2
+        {color: white}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="swiftie.html">Home</a>
+            <a href="bio.html">Bio</a> <!-- Link to the bio page -->
+            <a href="music.html">Music</a>
+            <a href="gallary.html">Albums</a>
+            <a href="form.html">Sign In</a>
+        </nav>
+    </header>
+
+    <div class="container-images">
+        <div class="image">
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX5KpP2LN299J"><img src="assets/images/albums/alb1.jpg" alt="Image 4"></a>
+            <figcaption class="caption">Taylor Swift</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="https://open.spotify.com/track/77sMIMlNaSURUAXq5coCxE"><img src="assets/images/albums/alb2.jpg" alt="Image 1"></a>
+            <figcaption class="caption">Fearless</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="https://open.spotify.com/track/5xXqyjLicvEpch72qEryFT"><img src="assets/images/albums/alb3.jpg" alt="Image 3"></a>
+            <figcaption class="caption">Speak now </figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="https://open.spotify.com/album/6kZ42qRrzov54LcAk4onW9"><img src="assets/images/albums/alb4.jpg" alt="Image 2"></a>
+            <figcaption class="caption">Red</figcaption> <!-- Add caption -->
+        </div>
+    </div>
+
+    <div class="container-images">
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb5.jpg" alt="Image 5"></a>
+            <figcaption class="caption">1989</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb6.jpg" alt="Image 6"></a>
+            <figcaption class="caption">Reputation</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb7.jpg" alt="Image 7"></a>
+            <figcaption class="caption">Lover</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb8.jpg" alt="Image 8"></a>
+            <figcaption class="caption">Folklore</figcaption> <!-- Add caption -->
+        </div>
+    </div>
+
+    <div class="container-images">
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb9.jpg" alt="Image 9"></a>
+            <figcaption class="caption">Evermore</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb10.jpg" alt="Image 10"></a>
+            <figcaption class="caption">Fearless<br>Taylors version</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb11.jpg" alt="Image 11"></a>
+            <figcaption class="caption">Red<br>Taylors version</figcaption> <!-- Add caption -->
+        </div>
+        <div class="image">
+            <a href="#"><img src="assets/images/albums/alb12.jpg" alt="Image 12"></a>
+            <figcaption class="caption">Speak Now<br>Taylors version</figcaption> <!-- Add caption -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="designer-credit">Designed with ❤️ by Anuva and Radhe</p>
+        </div>
+        <section class="social">
+            <div class="container">
+                <h2 class="follow-heading">Follow Taylor Swift</h2>
+                <a href="https://www.instagram.com/taylorswift/">Instagram</a>
+                <a href="https://twitter.com/taylorswift13">Twitter</a>
+                <a href="https://www.youtube.com/channel/UCqECaJ8Gagnn7YCbPEzWH6g">YouTube</a>
+            </div><br>
+            <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.6471991408825!2d73.37238817385071!3d18.902726257392022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7f902d5953327%3A0xbc2cca956036bc5f!2sUniversal%20Ai%20University!5e0!3m2!1sen!2sin!4v1711433796468!5m2!1sen!2sin" style="border:0;" width="700" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+        </section>
+    </footer>
+    <script src="assets/js/enhanced-ui.js"></script>
+</body>
+</html>

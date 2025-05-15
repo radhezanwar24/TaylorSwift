@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift Bio</title>
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+
+    <style type="text/css">
+        /* styles.css */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Added background color */
+            color: #333; /* Changed text color */
+        }
+
+        header {
+            background-image: url('https://example.com/taylor-swift-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+            z-index: 0; /* Set z-index lower than the content */
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 1;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px;
+            transition: all 0.3s ease;
+            margin-right: -10px; /* Added negative margin */
+        }
+
+        nav a:hover {
+            color: #FF69B4;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Ensure positioning context for z-index */
+            z-index: 1; /* Set z-index higher than the gradient */
+        }
+
+        h2 {
+            color: black;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            color: white;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        #123 {color: white}
+
+        p {
+            color: #333; /* Changed text color */
+            font-size: 16px; /* Decreased font size for better readability */
+            line-height: 1.8; /* Increased line height for better readability */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+        }
+
+        .social .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap */
+        }
+
+        .social h2 {
+            flex-basis: 100%; /* Force to take full width */
+            margin-bottom: 20px; /* Added margin */
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 20px; /* Increased margin */
+            transition: all 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #FF69B4;
+        }
+
+        .abc {
+            color: white;
+        }
+
+        .container-images {
+            display: flex;
+            padding: 100px;
+            border: 100px;
+            justify-content: space-between;
+        }
+
+        .image {
+            flex: 1;
+            height: 600px; /* Adjust height as needed */
+            border: none; /* Remove borders */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image:hover img {
+            transform: scale(1.1);
+        }
+        .cont2
+        {color:white}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="swiftie.html">Home</a>
+            <a href="bio.html">Bio</a> <!-- Link to the bio page -->
+            <a href="music.html">Music</a>
+            <a href="gallary.html">Albums</a>
+            <a href="form.html">Sign In</a>
+        </nav>
+        <div class="container-images">
+            <div class="image"><img src="assets/images/gallery/1.jpg" alt="Image 4"></div>
+            <div class="image"><img src="assets/images/gallery/2.jpg" alt="Image 1"></div>
+            <div class="image"><img src="assets/images/gallery/3.jpg" alt="Image 3"></div>
+            <div class="image"><img src="assets/images/gallery/4.jpg" alt="Image 2"></div>
+        </div>
+    </header>
+
+ <section class="about-section">
+    <div class="container">
+        <h2 class="about-title">Biography of Taylor Swift</h2>
+        <p>
+            Taylor Alison Swift is an American singer-songwriter. She was born on December 13, 1989, in Reading, Pennsylvania. At the age of 14, Swift made a significant decision to move to Nashville, Tennessee, to pursue her dreams in country music, a genre she deeply admired and resonated with. This bold move marked the beginning of her remarkable journey in the music industry.
+        </p>
+        <p>
+            Swift's musical prowess became evident with the release of her self-titled debut album in 2006. The album swiftly garnered widespread recognition and critical acclaim, propelling Swift into the spotlight of the music world. With her innate talent for storytelling through music and her distinctive voice, she captured the hearts of audiences worldwide.
+        </p>
+        <p>
+            Throughout her career, Swift's musical style has undergone a remarkable evolution. Initially rooted in country music, her sound gradually transitioned to embrace elements of pop, resulting in a diverse and captivating repertoire. One of her defining characteristics as an artist is her penchant for narrative songwriting, where she skillfully weaves personal experiences and emotions into her lyrics.
+        </p>
+        <p>
+            Swift's discography boasts a string of hit albums, including "Fearless," "Speak Now," "Red," "1989," "Reputation," and "Lover." Each album represents a new chapter in her life and artistic journey, resonating with fans of all ages and backgrounds. These albums not only showcase her musical versatility but also solidify her status as a cultural icon and one of the best-selling music artists of all time.
+        </p>
+        <p>
+            Beyond her extraordinary success in the music industry, Taylor Swift is also widely admired for her philanthropic endeavors and advocacy work. She has consistently used her platform to champion important social and political causes, including education, LGBTQ rights, gender equality, and more. Swift's unwavering commitment to making a positive impact on the world has earned her admiration and respect from fans and peers alike.
+        </p>
+    </div>
+</section>
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p class="designer-credit">Designed with ❤️ by Anuva and Radhe</p>
+        </div>
+        <section class="social">
+            <div class="container">
+                <h2 class="follow-heading">Follow Taylor Swift</h2>
+                <a href="https://www.instagram.com/taylorswift/">Instagram</a>
+                <a href="https://twitter.com/taylorswift13">Twitter</a>
+                <a href="https://www.youtube.com/channel/UCqECaJ8Gagnn7YCbPEzWH6g">YouTube</a>
+            </div><br>
+            <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.6471991408825!2d73.37238817385071!3d18.902726257392022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7f902d5953327%3A0xbc2cca956036bc5f!2sUniversal%20Ai%20University!5e0!3m2!1sen!2sin!4v1711433796468!5m2!1sen!2sin" style="border:0;" width="700" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+        </section>
+    </footer>
+    <script src="assets/js/enhanced-ui.js"></script>
+</body>
+</html>

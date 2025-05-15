@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift Tribute</title>
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-image: url('https://example.com/taylor-swift-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+            z-index: 0; /* Set z-index lower than the content */
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 10;
+            background-color: rgba(51, 51, 51, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            border-radius: 25px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #FF69B4;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Ensure positioning context for z-index */
+            z-index: 1; /* Set z-index higher than the gradient */
+        }
+        h1, h2 {
+            color: white;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            color: white;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .featured {
+            background: linear-gradient(135deg, #FF69B4, #FF1493);
+            padding: 80px 0;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .social {
+            background-color: #333;
+            color: white;
+            padding: 50px 0; /* Added padding */
+        }
+        .social .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap */
+        }
+        .social h2 {
+            flex-basis: 100%; /* Force to take full width */
+            margin-bottom: 20px; /* Added margin */
+        }
+        .social a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 20px; /* Increased margin */
+            transition: all 0.3s ease;
+        }
+        .social a:hover {
+            color: #FF69B4;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+        .listen-now-button {
+            background-color: black; /* Pink color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for the button */
+        .listen-now-button:hover {
+            background-color: #D2FFFE;
+            color: black;/* Darker pink color on hover */
+        }
+
+        /* Style for the about section */
+        .about-section {
+            padding: 50px 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .about-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .container-images {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .image {
+            flex: 1;
+            height: 600px; /* Adjust height as needed */
+            border: none; /* Remove borders */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image:hover img {
+            transform: scale(1.1);
+        }
+         .about-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="swiftie.html">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="music.html">Music</a>
+            <a href="gallary.html">Albums</a>
+            <a href="form.html">Sign In</a>
+
+        </nav>
+<div class="container-images">
+            <div class="image"><img src="assets/images/biography/bioimg9.jpg" alt="Image 4"></div>
+            <div class="image"><img src="assets/images/biography/bioimg6.jpg" alt="Image 1"></div>
+            <div class="image"><img src="assets/images/biography/bioimg11.jpg" alt="Image 3"></div>
+            <div class="image"><img src="assets/images/biography/bioimg7.jpg" alt="Image 2"></div>
+
+        </div>
+
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="about-title">About Taylor Swift</h2>
+            <p>
+                Taylor Swift, a name synonymous with talent, grace, and innovation in the music industry. From her humble beginnings as a country music sensation to her metamorphosis into a global pop icon, Taylor Swift has captivated audiences worldwide with her heartfelt lyrics, infectious melodies, and unwavering authenticity.
+            </p>
+            <p>
+                With each album release, Taylor has not only showcased her evolution as an artist but has also fearlessly explored new musical territories, pushing boundaries and challenging conventions along the way. Her ability to connect with listeners on a deeply personal level, coupled with her dedication to staying true to herself, has solidified her status as one of the most influential figures in modern music.
+            </p>
+            <p>
+                Whether she's crooning about love and heartbreak or using her platform to advocate for social change, Taylor Swift's impact extends far beyond the confines of the recording studio, leaving an indelible mark on both the music industry and the hearts of millions of fans worldwide.
+            </p>
+            <p>
+                Taylor's journey is not only marked by her musical achievements but also by her resilience and determination to overcome challenges. Despite facing criticism and setbacks, she has remained steadfast in her pursuit of artistic excellence and personal growth.
+            </p>
+            <p>
+                Beyond her musical endeavors, Taylor is known for her philanthropic efforts and advocacy work. She has used her platform to support various causes, including education, LGBTQ rights, and disaster relief, demonstrating her commitment to making a positive impact on the world.
+            </p>
+            <p>
+                As Taylor continues to evolve as an artist and as a person, her influence shows no signs of waning. With each new project, she continues to inspire and empower her fans, proving that true artistry knows no bounds.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+
+<section class="featured">
+        <div class="container">
+
+            <h2> Taylor Swift's Journey</h2>
+            <p>
+                Join us on an immersive journey through the captivating narrative of Taylor Swift's illustrious career. Beginning with her humble roots in country music, Taylor swiftly captured hearts with her raw talent and authentic storytelling. As the years unfolded, so did her artistry, leading to a metamorphosis into a global pop icon.
+            </p>
+            <p>
+                Navigate through the winding roads of Taylor's musical landscape, each turn marked by significant milestones - from chart-topping albums to award-winning performances. Witness the evolution of her songwriting prowess, from poignant ballads to empowering anthems that echo the sentiments of millions.
+            </p>
+            <p>
+                Explore the intricate tapestry of her discography, where every lyric is a thread woven into the fabric of her life experiences. From the vulnerability of youth to the strength found in adversity, Taylor's songs serve as a roadmap of her personal growth, resonating with fans across generations.
+            </p>
+
+        </div>
+</section>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p class="designed-with-love">Designed with ❤️ by Anuva and Radhe</p>
+        </div>
+        <section class="social">
+            <div class="container">
+                <h2 class="follow-heading">Follow Taylor Swift</h2>
+                <a href="https://www.instagram.com/taylorswift/" class="text-on-color">Instagram</a>
+                <a href="https://twitter.com/taylorswift13" class="text-on-color">Twitter</a>
+                <a href="https://www.youtube.com/channel/UCqECaJ8Gagnn7YCbPEzWH6g" class="text-on-color">YouTube</a>
+            </div><br>
+            <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.6471991408825!2d73.37238817385071!3d18.902726257392022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7f902d5953327%3A0xbc2cca956036bc5f!2sUniversal%20Ai%20University!5e0!3m2!1sen!2sin!4v1711433796468!5m2!1sen!2sin" style="border:0;" width="700" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+        </section>
+    </footer>
+    <script src="assets/js/enhanced-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music World - Artists</title>
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f8f8, #fff5f5);
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+        header {
+            background-image: url('https://example.com/music-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+            z-index: 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 10;
+            background-color: rgba(33, 33, 33, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #FF69B4;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+        nav a:hover {
+            color: #FF69B4;
+            transform: translateY(-2px);
+        }
+
+        nav a:hover::after {
+            width: 70%;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        h1, h2 {
+            color: white;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            color: white;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .featured {
+            background-color: #FF69B4;
+            padding: 50px 0;
+            margin-top: 20px;
+        }
+        .social {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+        }
+        .social .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .social h2 {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+        .social a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 20px;
+            transition: all 0.3s ease;
+        }
+        .social a:hover {
+            color: #FF69B4;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+        .listen-now-button {
+            background-color: black;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .listen-now-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #FF69B4, #D2FFFE);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.4s ease;
+        }
+        .listen-now-button:hover {
+            background-color: #D2FFFE;
+            color: black;
+        }
+        .about-section {
+            padding: 50px 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        .about-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .container-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 120px 5% 50px;
+            max-width: 1600px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image {
+            flex: 1;
+            height: 600px;
+            border: none;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .image:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+        table {
+            width: 90%;
+            margin: 40px auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+            color: black;
+        }
+        a
+        {color: white}
+
+        a:hover{color: black}
+        container1{color: white}
+
+        .cont2
+
+        {color: white}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="swiftie.html">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="music.html">Music</a>
+            <a href="gallary.html">Albums</a>
+            <a href="form.html">Sign In</a>
+        </nav>
+        <div class="container-images">
+            <div class="image"><img src="assets/images/albums/music1.jpg" alt="Artist 1"></div>
+            <div class="image"><img src="assets/images/albums/music2.jpg" alt="Artist 2"></div>
+            <div class="image"><img src="assets/images/albums/music8.jpg" alt="Artist 3"></div>
+            <div class="image"><img src="assets/images/albums/music4.jpg" alt="Artist 4"></div>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h2 class="about-title">The Evolution and Impact of Taylor Swift's Musical Journey</h2>
+            <p>
+                Taylor Swift's music is a rich tapestry woven with threads of emotion, experience, and raw authenticity. From her humble beginnings as a country songstress strumming her guitar in Nashville to her meteoric rise as a global pop phenomenon, Taylor has consistently defied expectations and pushed boundaries with her artistry. Her songs are not just melodies; they are snapshots of life's most poignant moments, from the exhilaration of first love to the ache of heartbreak and the triumph of self-discovery. With each album, Taylor invites listeners into her world, sharing intimate glimpses of her journey and inviting them to see themselves reflected in her lyrics. Whether she's penning catchy anthems or soul-baring ballads, Taylor's music resonates on a deeply personal level, forging connections that transcend borders and generations. Through her fearless vulnerability and unwavering authenticity, Taylor Swift has not only captured the hearts of millions but has also left an indelible mark on the musical landscape, cementing her legacy as one of the most influential artists of her time.
+            </p>
+        </div>
+        <h2 align="center">Taylor Swift Albums</h2>
+   <table>
+  <tr>
+    <th>Serial No.</th>
+    <th>Album Title</th>
+    <th>Release Date</th>
+    <th>Number of Tracks</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><a href="https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography">Taylor Swift</a></td>
+    <td>October 24, 2006</td>
+    <td>11</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><a href="https://en.wikipedia.org/wiki/Fearless_%28Taylor_Swift_album%29">Fearless</a></td>
+    <td>November 11, 2008</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><a href="https://en.wikipedia.org/wiki/Speak_Now">Speak Now</a></td>
+    <td>October 27, 2010</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><a href="https://en.wikipedia.org/wiki/Red_%28Taylor_Swift_album%29">Red</a></td>
+    <td>October 22, 2012</td>
+    <td>16</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td><a href="https://en.wikipedia.org/wiki/1989_%28album%29">1989</a></td>
+    <td>October 27, 2014</td>
+    <td>13</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td><a href="https://en.wikipedia.org/wiki/Reputation_%28album%29">Reputation</a></td>
+    <td>November 10, 2017</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td><a href="https://en.wikipedia.org/wiki/Lover_%28album%29">Lover</a></td>
+    <td>August 23, 2019</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><a href="https://en.wikipedia.org/wiki/Folklore_%28Taylor_Swift_album%29">folklore</a></td>
+    <td>July 24, 2020</td>
+    <td>16</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td><a href="https://en.wikipedia.org/wiki/Evermore">evermore</a></td>
+    <td>December 11, 2020</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td><a href="https://en.wikipedia.org/wiki/Fearless_%28Taylor%27s_Version%29">Fearless (Taylor's Version)</a></td>
+    <td>April 9, 2021</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td><a href="https://en.wikipedia.org/wiki/Red_%28Taylor%27s_Version%29">Red (Taylor's Version)</a></td>
+    <td>November 12, 2021</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td><a href="https://en.wikipedia.org/wiki/Speak_Now_%28Taylor%27s_Version%29">Speak Now (Taylor's Version)</a></td>
+    <td>October 27, 2023</td>
+    <td>(To be confirmed)</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td><a href="https://en.wikipedia.org/wiki/1989_%28Taylor%27s_Version%29">1989 (Taylor's Version)</a></td>
+    <td>October 27, 2023</td>
+    <td>(To be confirmed)</td>
+  </tr>
+</table>
+
+    <section class="featured">
+        <div class="container">
+            <h2>Enchantment and Evolution: The Timeless Legacy of Taylor Swift's Musical Odyssey</h2>
+            <h3></h3>
+            <p>
+               Dive into the mesmerizing world of Taylor Swift, an international icon whose music has left an indelible mark on the industry. With a career spanning over a decade, Taylor Swift has evolved from a country prodigy to a pop sensation, enchanting audiences worldwide with her heartfelt lyrics, soulful vocals, and infectious melodies. Embark on a journey through her chart-topping albums, from the youthful exuberance of 'Fearless' to the raw emotion of 'Folklore,' as you discover the stories behind the songs that have resonated with millions. Join us as we celebrate the enduring legacy of Taylor Swift and the transformative power of her music.
+            </p>
+            <button class="listen-now-button" onclick="window.location.href='https://www.taylorswift.com/'">Listen Now</button>
+        </div>
+<section class="tour-dates">
+  <div class="container">
+    <h2>Taylor Swift Tour History (as of April 3, 2024)</h2>
+    <table>
+      <tr>
+        <th>Tour</th>
+        <th>Dates</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td>The Eras Tour (Ongoing)</td>
+        <td>March 17, 2023 - December 8, 2024</td>
+        <td><a href="https://www.ticketmaster.com/taylor-swift-tickets/artist/1094215"> Link to Tickets</a></td>
+      </tr>
+      <tr>
+        <td>Reputation Stadium Tour (2018)</td>
+        <td>May 8, 2018 - November 21, 2018</td>
+        <td><a href="https://en.wikipedia.org/wiki/Reputation_Stadium_Tour">Details</a></td>
+      </tr>
+      <tr>
+        <td>Taylor Swift World Tour (2015)</td>
+        <td>May 18, 2015 - December 12, 2015</td>
+        <td><a href="https://en.wikipedia.org/wiki/The_Eras_Tour">Details</a></td>
+      </tr>
+      <tr>
+        <td>The Red Tour (2013-2014)</td>
+        <td>March 23, 2013 - June 14, 2014</td>
+        <td><a href="https://en.wikipedia.org/wiki/The_Red_Tour">Details</a></td>
+      </tr>
+      <tr>
+        <td>Speak Now World Tour (2010-2011)</td>
+        <td>August 11, 2010 - February 18, 2011</td>
+        <td><a href="https://en.wikipedia.org/wiki/Speak_Now_World_Tour">Details</a></td>
+      </tr>
+      <tr>
+        <td>Fearless Tour (2008-2009)</td>
+        <td>April 29, 2008 - November 11, 2009</td>
+        <td><a href="https://en.wikipedia.org/wiki/Fearless_Tour">Details</a></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+
+    <footer>
+        <div class="container">
+            <p class="designer-credit">Designed with ❤️ by Anuva and Radhe</p>
+        </div>
+        <section class="social">
+            <div class="container">
+                <h2 class="follow-heading">Follow Taylor Swift</h2>
+                <a href="https://www.instagram.com/musicworld/">Instagram</a>
+                <a href="https://twitter.com/musicworld">Twitter</a>
+                <a href="https://www.youtube.com/channel/UCqECaJ8Gagnn7YCbPEzWH6">YouTube</a>
+            </div><br>
+            <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.6471991408825!2d73.37238817385071!3d18.902726257392022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7f902d5953327%3A0xbc2cca956036bc5f!2sUniversal%20Ai%20University!5e0!3m2!1sen!2sin!4v1711433796468!5m2!1sen!2sin" style="border:0;" width="700" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+        </section>
+    </footer>
+    <script src="assets/js/enhanced-ui.js"></script>
+</body>
+</html>
