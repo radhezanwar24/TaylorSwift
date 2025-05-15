@@ -22,17 +22,19 @@ A tribute website dedicated to Taylor Swift, featuring her biography, music, alb
 ![Music](screenshots/music.png)
 
 ### Albums
-![Albums](screenshots/albums.png)
+![Albums](screenshots/album.png)
 
-## How to Add Screenshots
+### Sign Up
+![Sign Up](screenshots/signup.png)
 
-1. Take screenshots of each page of the website
-2. Save them in the `screenshots` folder with the following names:
-   - `home.png` - Screenshot of the home page
-   - `bio.png` - Screenshot of the biography page
-   - `music.png` - Screenshot of the music page
-   - `albums.png` - Screenshot of the albums page
-3. Push the screenshots to GitHub
+## Additional Screenshots
+
+The project also includes these additional screenshots:
+
+- `bio3.png` - Alternative view of the biography page
+- `music enhancement.png` - Enhanced music page with improved UI
+- `table.png` - Table layout for music information
+- `loading.png` - Loading animation
 
 ## How to Run
 
